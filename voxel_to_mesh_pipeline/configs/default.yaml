@@ -1,0 +1,65 @@
+method: onet
+data:
+  dataset: Shapes3D
+  path: data/ShapeNet
+  classes: null
+  input_type: voxels
+  train_split: train
+  val_split: val
+  test_split: test
+  dim: 3
+  points_file: points.npz
+  points_iou_file: points.npz
+  points_subsample: 1024
+  points_unpackbits: true
+  model_file: model.off
+  watertight_file: model_watertight.off
+  voxels_file: 'model.binvox'
+  with_transforms: false
+model:
+  decoder: cbatchnorm
+  encoder: voxel_simple
+  encoder_latent: null
+  decoder_kwargs: {}
+  encoder_kwargs: {}
+  encoder_latent_kwargs: {}
+  multi_gpu: false
+  c_dim: 256
+  z_dim: 0
+  use_camera: false
+training:
+  out_dir: out/voxels/onet
+  batch_size: 64
+  print_every: 10
+  visualize_every: 2000
+  checkpoint_every: 1000
+  validate_every: 2000
+  backup_every: 100000
+  eval_sample: false
+  model_selection_metric: iou
+  model_selection_mode: maximize
+test:
+  threshold: 0.2
+  eval_mesh: true
+  eval_pointcloud: false
+  model_file: model_best.pt
+generation:
+  batch_size: 100000
+  refinement_step: 0
+  vis_n_outputs: 30
+  generate_mesh: true
+  generate_pointcloud: false
+  generation_dir: generation
+  use_sampling: false
+  resolution_0: 32
+  upsampling_steps: 2
+  simplify_nfaces: null
+  copy_groundtruth: false
+  copy_input: true
+  refine: false
+  n_x: 128
+  n_z: 1
+preprocessor:
+  type: null
+  config: ""
+  model_file: null
