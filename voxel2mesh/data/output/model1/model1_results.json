@@ -1,0 +1,23 @@
+{
+  "input_file": "data\\input\\model1.binvox",
+  "output_directory": "data\\output\\model1",
+  "mesh_file": "data\\output\\model1\\model1_mesh.off",
+  "voxel_shape": [
+    32,
+    32,
+    32
+  ],
+  "voxel_occupied": 599.0,
+  "mesh_stats": {
+    "n_vertices": 1138,
+    "n_faces": 2300,
+    "volume": 0.027992025904709523,
+    "surface_area": 1.1650340247336204,
+    "is_watertight": true
+  },
+  "visualization_paths": {
+    "voxels": "data\\output\\model1\\model1_voxels.png",
+    "mesh": "data\\output\\model1\\model1_mesh.png",
+    "comparison": "data\\output\\model1\\model1_comparison.png"
+  }
+}

@@ -1,0 +1,9 @@
+# Core dependencies for marching cubes approach
+numpy>=1.21.0
+scipy>=1.7.0
+scikit-image>=0.19.0
+trimesh>=3.15.0
+matplotlib>=3.5.0
+
+# Optional dependencies
+tqdm>=4.64.0
